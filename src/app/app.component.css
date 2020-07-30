@@ -1,0 +1,82 @@
+
+
+    /* html { 
+        background: url("https://live.staticflickr.com/670/22211662874_53411cc1b4_b.jpg") no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      } */
+
+
+/* body {
+    background-image: url("https://live.staticflickr.com/670/22211662874_53411cc1b4_b.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vh;
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
+} */
+
+#bg {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+    z-index: -1;
+  }
+  #bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+  }
+
+
+
+.button {
+    height: 50px;
+    width: 100px;
+    color: green;
+    background-color: burlywood;
+    border-radius: 20%;
+    
+}
+
+h1 {
+    color: rgb(153, 98, 15);
+    background-color: rgb(71, 3, 71);
+    display: inline;
+}
+
+.inone {
+    height: 400px; 
+    width: 300px;
+    padding-top: 0;
+    padding-left: 0;
+    line-height: 1em;
+    background-color: black;
+    color: rgb(253, 127, 81);
+    
+    
+}
+
+#txt2 {
+
+    background-color: black;
+    color:rgb(253, 127, 81);
+    height: 250px;
+    width: 250px;
+    
+    
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
