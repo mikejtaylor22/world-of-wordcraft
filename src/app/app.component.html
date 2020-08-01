@@ -17,14 +17,29 @@
   <div class="row-xl-4 form-group" *ngIf="(engage == true)">
   -->
 
-<!-- <div *ngFor="let novel of novelText"> -->
-  <div style="margin-left:1400px vertical-align: top" *ngIf="(engage == true)">
-  <textarea readonly name="textAreaTwo" id="txt2"> {{ myTextArea}} </textarea>
-</div> 
-<!-- </div>
-</div> -->
-<!-- </div> -->
- 
+
+  <div *ngIf="(engage == true)"></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Word</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+   
+    
+
+   
+      <tbody>
+        <tr *ngFor="let row of wordDisplay">
+        <td>{{row.word}}</td>
+        <td>{{row.qty}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    
+
 
 </body>
 </html>

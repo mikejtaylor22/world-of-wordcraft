@@ -13,10 +13,13 @@ export class AppComponent {
    myTextArea: string[];
    nonStopWords = [];
    stopWords = [];
-  //  words: string[];
-  words = [];
-  // arrayOfLines = [];
+  storeWord: string;
+  wordCount = 0;
+  storedArray = [];
+ wordDisplay =[];
+  arrayOfLines = [];
   i = 0;
+  x = 0;
 
   engageApp() {
     
@@ -24,6 +27,43 @@ export class AppComponent {
      this.engage = true;
    
     //  var words = $('#myTextArea').val().split(' ');
+
+    var arrayOfLines = $('#myTextArea').val().split(' ');
+
+    this.wordDisplay = arrayOfLines.reduce((accum, value) => {
+       const dupeIndex = accum.findIndex(itemX => itemX.word == value);
+       if (dupeIndex == -1 ){
+         accum.push({
+           qty:1, word:value
+         });
+
+       } else {
+         accum[dupeIndex].qty++;
+       }
+       return accum;
+    },[]);
+  }
+}
+    
+
+    // for (this.i==0; this.i < arrayOfLines.length; this.i++){
+
+    //   if (arrayOfLines[this.x] == arrayOfLines[this.i]){
+    //      this.storeWord = arrayOfLines[this.x];
+    //      this.storedArray.push(this.storeWord);
+    //      this.wordCount+=1;
+    //      console.log(this.x, this.i);
+         
+    //     }else if (arrayOfLines[this.x] != arrayOfLines[this.i]) {
+            
+    //    console.log(this.storeWord, this.wordCount, this.storedArray);
+    //    this.storeWord = '';
+    //   this.wordCount = 0;
+        //  this.i++;
+        
+
+
+
 
 
 
@@ -60,28 +100,7 @@ export class AppComponent {
     // console.log(sortedKeywords);
 
     
-  }
-}
 
 
-
-    // for (this.i==0; this.i < arrayOfLines.length; this.i++){
-    //   if (arrayOfLines[this.x] == arrayOfLines[this.i]){
-    //       this.storeWord = arrayOfLines[this.x];
-    //       this.wordCount+=1;
-    //       console.log(this.x, this.i);
-         
-    //       }else if (arrayOfLines[this.x]!== arrayOfLines[this.i]) {
-            
-    //     console.log(this.storeWord, this.wordCount);
-    //     this.storeWord = "";
-    //     this.wordCount = 0;
-    //     this.i++;
-        
-    //   }
-    // }
-    // }
-     // console.log(this.storeWord, this.wordCount);
-    
-     
+   
 
