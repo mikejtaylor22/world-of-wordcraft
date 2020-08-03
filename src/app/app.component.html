@@ -5,21 +5,15 @@
   <div id="bg">
     <img src="https://live.staticflickr.com/670/22211662874_53411cc1b4_b.jpg" alt="">
   </div>
-<div class="col-xl-4 form-group">
+<!-- <div class="col-xl-4 form-group"> -->
   
-  <label for="novelField"></label>
+  <div>
   <textarea [(ngModel)]='myTextArea' id='myTextArea' name="textAreaOne" type="text" placeholder="Enter text here..." class="inone"></textarea>
-</div>
-<br>
 <button class="button" (click)="engageApp()"> Engage! </button>
+</div>
 
-<!-- <div class="col-xl-4 form-group">
-  <div class="row-xl-4 form-group" *ngIf="(engage == true)">
-  -->
-
-
-  <div *ngIf="(engage == true)"></div>
-    <table>
+  <div *ngIf="(engage == true)">
+    <table class="table table-dark">
       <thead>
         <tr>
           <th>Word</th>
@@ -38,7 +32,7 @@
       </tbody>
     </table>
 
-    
+  </div>
 
 
 </body>
