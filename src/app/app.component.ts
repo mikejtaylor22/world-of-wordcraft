@@ -29,7 +29,7 @@ export class AppComponent {
      //split the textarea into an array of strings seperated by ATLEAST 1 space
     var arrayOfLines = $('#myTextArea').val().split(/\s+/);
     
-    //remove all unnecessary characters
+    //remove all unnecessary characters (I believe you can use map here. something for later)
     for(this.index=0; this.index < arrayOfLines.length; this.index++){
       this.newString = arrayOfLines[this.index];
       this.newStringStripped = this.newString.replace(/[^0-9a-z]/gi, '');
@@ -45,13 +45,12 @@ export class AppComponent {
          accum.push({
            qty:1, word:value
          });
-
        } else {
-         accum[dupeIndex].qty++;
+         accum[dupeIndex].qty++; 
        }
-     
       return accum;
+      
     },[]);
-
+    
   }
 }
