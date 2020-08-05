@@ -10,14 +10,14 @@ export class AppComponent {
   title = 'world-of-wordcraft';
   engage = false;
    myTextArea: string[];
-  wordCount = 0;
  wordDisplay: string[];
   arrayOfLines: string[] = [];
   newString: string;
   newStringStripped: string;
   strippedArray: string[] = [];;
+  table1: string;
  
-
+ 
   index: number;
   endApp = false;
 
@@ -43,14 +43,24 @@ export class AppComponent {
        const dupeIndex = accum.findIndex(itemX => itemX.word == value);
        if (dupeIndex == -1 ){
          accum.push({
-           qty:1, word:value
+           qty:1, word:value          
          });
        } else {
          accum[dupeIndex].qty++; 
        }
-      return accum;
+       return accum;
       
     },[]);
     
   }
+  
+  
+  //reset the app
+  onReset() {
+    this.arrayOfLines = [];
+    this.strippedArray = [];
+    this.wordDisplay = [];
+    
+  }
+
 }
