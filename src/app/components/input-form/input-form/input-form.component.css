@@ -1,0 +1,24 @@
+.inone {
+    height: 500px; 
+    width: 100%;
+    padding-top: 0;
+    padding-left: 0;
+    line-height: 1em;
+    background-color: black;
+    color: rgb(253, 127, 81);
+    
+    
+}
+.button {
+    height: 50px;
+    width: 100px;
+    color: green;
+    background-color: burlywood;
+    border-radius: 20%;
+    background-repeat:no-repeat;
+    
+    
+}
+.engagearea{
+    background-color: black;
+}

@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-declare var $: any;
+import { InputFormComponent } from './components/input-form/input-form/input-form.component';
+import { ThesaurusService} from './thesaurus.service';
+import { ConstantPool } from '@angular/compiler';
+
+// declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -11,30 +15,33 @@ export class AppComponent {
   engage = false;
    myTextArea: string[];
  wordDisplay: string[];
-  arrayOfLines: string[] = [];
   newString: string;
   newStringStripped: string;
   strippedArray: string[] = [];;
   table1: string;
- 
+  inputText: string;
+ arrayOfLines: string[];
+
  
   index: number;
   endApp = false;
+  constructor(private thesaurusService: ThesaurusService){}
 
-  engageApp() {
+  engageApp(arrayOfLines: string[]) {
+    
     
      console.log('App has been launched!');
      this.engage = true;
   
      //split the textarea into an array of strings seperated by ATLEAST 1 space
-    var arrayOfLines = $('#myTextArea').val().split(/\s+/);
+    // var arrayOfLines = $('#myTextArea').val().split(/\s+/);
     
     //remove all unnecessary characters (I believe you can use map here. something for later)
     for(this.index=0; this.index < arrayOfLines.length; this.index++){
       this.newString = arrayOfLines[this.index];
       this.newStringStripped = this.newString.replace(/[^0-9a-z]/gi, '');
+      this.newStringStripped = this.newStringStripped.toLowerCase();
       this.strippedArray.push(this.newStringStripped);
-         
     }
 
     
@@ -46,8 +53,13 @@ export class AppComponent {
            qty:1, word:value          
          });
        } else {
-         accum[dupeIndex].qty++; 
+         accum[dupeIndex].qty++;
+         
        }
+      // const wordCheck = this.thesaurusService.getThesaurus(value)
+      //  console.log(wordCheck);
+      //  console.log(value); 
+      
        return accum;
       
     },[]);
@@ -60,7 +72,8 @@ export class AppComponent {
     this.arrayOfLines = [];
     this.strippedArray = [];
     this.wordDisplay = [];
-    
+    this.engage = false;
+    //Would like to also clear the textarea here
   }
 
 }
