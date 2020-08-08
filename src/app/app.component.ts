@@ -3,7 +3,7 @@ import { InputFormComponent } from './components/input-form/input-form/input-for
 import { ThesaurusService} from './thesaurus.service';
 import { ConstantPool } from '@angular/compiler';
 
-// declare var $: any;
+
 
 @Component({
   selector: 'app-root',
@@ -33,16 +33,19 @@ export class AppComponent {
      console.log('App has been launched!');
      this.engage = true;
   
-     //split the textarea into an array of strings seperated by ATLEAST 1 space
-    // var arrayOfLines = $('#myTextArea').val().split(/\s+/);
+    
     
     //remove all unnecessary characters (I believe you can use map here. something for later)
-    for(this.index=0; this.index < arrayOfLines.length; this.index++){
-      this.newString = arrayOfLines[this.index];
-      this.newStringStripped = this.newString.replace(/[^0-9a-z]/gi, '');
-      this.newStringStripped = this.newStringStripped.toLowerCase();
-      this.strippedArray.push(this.newStringStripped);
-    }
+    // for(this.index=0; this.index < arrayOfLines.length; this.index++){
+    //   this.newString = arrayOfLines[this.index];
+    //   this.newStringStripped = this.newString.replace(/[^0-9a-z]/gi, '');
+    //   this.newStringStripped = this.newStringStripped.toLowerCase();
+    //   this.strippedArray.push(this.newStringStripped);
+    // }
+
+    this.strippedArray = arrayOfLines.map(s => s.replace(/[^0-9a-z]/gi, '').toLowerCase());
+
+    
 
     
     //get all the words in the array and the number of times they are used
