@@ -11,6 +11,7 @@ export class InputFormComponent implements OnInit {
   @Output() wordArrayEvent = new EventEmitter<string[]>();
 inputForm: FormGroup;
 
+
   constructor() { }
 
   ngOnInit() {
@@ -22,6 +23,7 @@ inputForm: FormGroup;
   public onSubmit(){
   // const arrayOfLines: string[] = this.inputForm.value.inputText.split(/\s+/);
 var arrayOfLines: string[] = this.inputForm.value.inputText.split(/\s+/);
+
 
 
 this.wordArrayEvent.emit(arrayOfLines);

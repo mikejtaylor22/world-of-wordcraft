@@ -41,9 +41,9 @@
    
       <tbody>
         <tr *ngFor="let row of wordDisplay">
-        <td>{{row.word}}</td>
+        <td><button (click)="onRemove(row.word)">remove</button>{{row.word}}</td>
         <td>{{row.qty}}</td>
-        <td>Synonyms here</td>
+        <td><button (click)="onGetSynonyms(row.word)">Synonyms here</button>{{row.syns}}</td>
       </tr>
       </tbody>
     </table>
