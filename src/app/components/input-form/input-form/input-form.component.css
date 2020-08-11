@@ -1,24 +1,60 @@
 .inone {
-    height: 500px; 
-    width: 100%;
-    padding-top: 0;
-    padding-left: 0;
-    line-height: 1em;
-    background-color: black;
-    color: rgb(253, 127, 81);
-    
-    
+  height: 500px;
+  width: 100%;
+  background-color: black;
+  color:  rgb(248, 252, 30);
+  border-radius: 10px;
+  border-width: 5px;
+  border-color:  rgb(248, 252, 30);
+  padding-left: 10px;
 }
 .button {
-    height: 50px;
-    width: 100px;
-    color: green;
-    background-color: burlywood;
-    border-radius: 20%;
-    background-repeat:no-repeat;
-    
-    
+  height: 50px;
+  width: 100px;
+  color:  rgb(248, 252, 30);
+  background-color: rgb(0, 175, 0);
+  border-radius: 20%;
+  background-repeat: no-repeat;
+  border-width: 5px;
 }
-.engagearea{
-    background-color: black;
+
+.button:hover {
+  border: 1px solid #888;
+  background-color: blue;
+}
+
+.engagearea {
+  background-color: black;
+}
+
+.reset {
+  height: 50px;
+  width: 100px;
+  color: green;
+  background-color: burlywood;
+  border-radius: 20%;
+  background-repeat: no-repeat;
+  margin-left: 125px;
+  margin-top: 5px;
+}
+
+form {
+    padding: 10px;
+}
+
+.rbOne {
+    height: 50px;
+  width: 100px;
+  color: rgb(255, 255, 25);
+  background-color: rgb(202, 23, 23);
+  border-radius: 20%;
+  background-repeat: no-repeat;
+  border-width: 5px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.rbOne:hover {
+border: 1px solid #888;
+  background-color: blue;
 }

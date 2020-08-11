@@ -1,33 +1,19 @@
 <html>
-<h1 class="strong"> Welcome to world of WORDCRAFT! </h1> 
+<h2 class="header">World Of Wordcraft</h2>
 
 <body>
   <div id="bg">
-    <img src="https://live.staticflickr.com/670/22211662874_53411cc1b4_b.jpg" alt="">
-    
-    
+    <img src="https://live.staticflickr.com/670/22211662874_53411cc1b4_b.jpg" alt=""> 
+  </div>
+  
+
+  <div class="engagearea">
+    <app-input-form (wordArrayEvent)='engageApp($event)' (resetArrayEvent)='onReset()'></app-input-form>
   </div>
 
-<div>
-  <app-input-form (wordArrayEvent)='engageApp($event)'></app-input-form>
-</div>
-<!--   
-  <div class="textareadiv">
-  <textarea [(ngModel)]='myTextArea' id='myTextArea' name="textAreaOne" type="text" placeholder="Enter text here..." class="inone"></textarea>
-</div>
 
-
-<div class="buttondiv">
-  <button class="button" (click)="engageApp()"> Engage! </button>
-  <button class="resetbutton" (click)="onReset()"> Reset </button>
-  <button class="button" routerLink='inputform' >Input form component</button>
-</div> -->
-<div class="engagearea">
-  <button class="resetbutton" (click)="onReset()"> Reset </button>
-</div>
-
-  <div *ngIf="(engage == true)">
-    <table class="table table-dark" id = "table1">
+  <div class="displayTable" *ngIf="(engage == true)">
+    <table class="table table-dark" id="table1">
       <thead>
         <tr>
           <th>Word</th>
@@ -35,16 +21,16 @@
           <th>Synonyms</th>
         </tr>
       </thead>
-   
-    
 
-   
+
+
+
       <tbody>
         <tr *ngFor="let row of wordDisplay">
-        <td><button (click)="onRemove(row.word)">remove</button>{{row.word}}</td>
-        <td>{{row.qty}}</td>
-        <td><button (click)="onGetSynonyms(row.word)">Synonyms here</button>{{row.syns}}</td>
-      </tr>
+          <td><button class="small-btn" (click)="onRemove(row.word)" title="Click to Remove this word from the list"><b>remove</b></button>&nbsp;&nbsp; {{row.word}}</td>
+          <td>{{row.qty}}</td>
+          <td><button class="small-btn" (click)="onGetSynonyms(row.word)" title="Click to get Synonyms"><b>Synonyms</b></button>{{row.syns}}</td>
+        </tr>
       </tbody>
     </table>
 
@@ -52,5 +38,4 @@
 
 
 </body>
-<!-- <router-outlet></router-outlet> -->
 </html>

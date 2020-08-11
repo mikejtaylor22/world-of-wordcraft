@@ -4,29 +4,29 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-input-form',
   templateUrl: './input-form.component.html',
-  styleUrls: ['./input-form.component.css']
+  styleUrls: ['./input-form.component.css'],
 })
 export class InputFormComponent implements OnInit {
-  
   @Output() wordArrayEvent = new EventEmitter<string[]>();
-inputForm: FormGroup;
+  @Output() resetArrayEvent = new EventEmitter<null>();
+  inputForm: FormGroup;
 
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.inputForm = new FormGroup({
-      inputText: new FormControl(null)
+      inputText: new FormControl(null),
     });
   }
 
-  public onSubmit(){
-  // const arrayOfLines: string[] = this.inputForm.value.inputText.split(/\s+/);
-var arrayOfLines: string[] = this.inputForm.value.inputText.split(/\s+/);
-
-
-
-this.wordArrayEvent.emit(arrayOfLines);
+  public onSubmit() {
+    // const arrayOfLines: string[] = this.inputForm.value.inputText.split(/\s+/);
+    var arrayOfLines: string[] = this.inputForm.value.inputText.split(/\s+/);
+    this.wordArrayEvent.emit(arrayOfLines);
   }
 
+  public resetSend() {
+    this.resetArrayEvent.emit();
+  
+  }
 }

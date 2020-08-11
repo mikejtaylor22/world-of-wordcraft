@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { InputFormComponent } from './components/input-form/input-form/input-form.component';
 import { ThesaurusService} from './thesaurus.service';
 import { DictionaryResponse, Word } from './models';
-import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
+
 
 
 
@@ -16,30 +15,16 @@ export class AppComponent {
   engage = false;
   myTextArea: string[];
   wordDisplay: Word[];
-  newString: string;
-  newStringStripped: string;
   strippedArray: string[] = [];
-  table1: string;
   inputText: string;
   arrayOfLines: string[];
   sortedList: Word[];
   removedWords: string[] = [];
 
-  index: number;
-  endApp = false;
   constructor(private thesaurusService: ThesaurusService) {}
 
   engageApp(arrayOfLines: string[]) {
-    console.log('App has been launched!');
     this.engage = true;
-
-    //remove all unnecessary characters (I believe you can use map here. something for later)
-    // for(this.index=0; this.index < arrayOfLines.length; this.index++){
-    //   this.newString = arrayOfLines[this.index];
-    //   this.newStringStripped = this.newString.replace(/[^0-9a-z]/gi, '');
-    //   this.newStringStripped = this.newStringStripped.toLowerCase();
-    //   this.strippedArray.push(this.newStringStripped);
-    // }
 
     //remove all unnecessary characters and make everything lowercase
     this.strippedArray = arrayOfLines.map((s) =>
@@ -64,11 +49,11 @@ export class AppComponent {
     this.wordDisplay = this.sortedList.slice(0, 25);
   }
 
+  //using thesaurusService to call thesaurus API
   onGetSynonyms(word: string) {
     this.thesaurusService
       .getThesaurus(word)
       .subscribe((dictionaryResponse: DictionaryResponse[]) => {
-        console.log(dictionaryResponse);
         const index = this.wordDisplay.findIndex((element: Word) => {
           return element.word == word;
         });
@@ -86,24 +71,12 @@ export class AppComponent {
     //Would like to also clear the textarea here
   }
 
-  onRemove(word:string) {
-     this.removedWords.push(word);
-    const removedWordsList = this.sortedList.filter((word:Word)=>{
+  onRemove(word: string) {
+    this.removedWords.push(word);
+    const removedWordsList = this.sortedList.filter((word: Word) => {
       return this.removedWords.indexOf(word.word) == -1;
     });
 
-    this.wordDisplay = removedWordsList.slice(0,25);
-   }
-
-  // removeWords(arrayOfWords: string[], wordsToRemove: string[]): string[] {
-  //   return arrayOfWords.filter((word) => {
-  //     return wordsToRemove.indexOf(word) == -1;
-  //   });
-  //   const originalArray = arrayOfWords;
-  //   const arrayWithWordsRemoved = this.removeWords(
-  //     originalArray,
-  //     wordsToRemove
-  //   );
-  //   console.log(arrayWithWordsRemoved);
-  // }
+    this.wordDisplay = removedWordsList.slice(0, 25);
+  }
 }

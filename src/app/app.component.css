@@ -1,106 +1,90 @@
-
-
-    html { 
-        /* background: url("https://live.staticflickr.com/670/22211662874_53411cc1b4_b.jpg") no-repeat center center fixed; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover; */
-    background-repeat: no-repeat;
-    background-size: 100vh;
-    margin: 0;
-    min-height: 100%;
-    padding: 0;
+* {
+  font-family: "Antic Slab", serif;
+  
 }
-        
+
+/* html {
+    background: linear-gradient(45deg, rgb(23, 68, 2), rgb(221, 224, 27));
+} */
+/* html {
+  background-repeat: no-repeat;
+  background-size: 100vh;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+}
 
 body {
-    
-    background-repeat: no-repeat;
-    background-size: 100vh;
-    margin: 0;
-    min-height: 100%;
-    padding: 0;
-}
+  background-repeat: no-repeat;
+  background-size: 100vh;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+} */
 
- #bg {
-    position: fixed; 
-    top: -50%; 
-    left: -50%; 
-    width: 200%; 
-    height: 200%;
-    z-index: -1;
-  } 
-  #bg img {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    margin: auto; 
-    min-width: 50%;
-    min-height: 50%;
-  }
+  #bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+  background-color: rgb(50, 100, 0);
+} 
 
-
+#bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}  
 
 .button {
-    height: 50px;
-    width: 100px;
-    color: green;
-    background-color: burlywood;
-    border-radius: 20%;
-    background-repeat:no-repeat;
-    
-    
-}
-.resetbutton {
-    height: 50px;
-    width: 100px;
-    color: green;
-    background-color: burlywood;
-    border-radius: 20%; 
-    background-repeat:no-repeat;
-    
-    
+  height: 50px;
+  width: 100px;
+  color: green;
+  background-color: burlywood;
+  border-radius: 20%;
+  background-repeat: no-repeat;
 }
 
-h1 {
-    color: rgb(248, 252, 30);
-    background-color: rgb(4, 49, 21);
-    display: inline;
-    margin-left: 600px;
+.button:hover {
+  border: 1px solid #888;
+  background-color: #ddd;
 }
 
-.inone {
-    height: 500px; 
-    width: 100%;
-    padding-top: 0;
-    padding-left: 0;
-    line-height: 1em;
-    background-color: black;
-    color: rgb(253, 127, 81);
-    
-    
+.resetbutton:hover {
+  border: 1px solid #888;
+  background-color: #ddd;
 }
 
-
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
+.header {
+    text-align: center;
+    color:  rgb(248, 252, 30);;
 }
 
-.buttondiv{
-    padding:0;
-    margin:0;
-    background-color: rgb(0, 0, 0);  
-    
+.engagearea {
+  background-color: black;
+  padding: 10px;
 }
 
-.textareadiv {
-    background-color: black; 
+.small-btn {
+  width: 70px;
+  height: 25px;
+  font-size: 12px;
+  background-color: rgb(248, 252, 30);
 }
-.engagearea{
-    background-color: black;
+
+.small-btn:hover {
+  border: 1px solid #888;
+  background-color: #ddd;
+}
+
+.displayTable {
+  padding-top: 5px;
+  background-color:  rgb(248, 252, 30);
 }

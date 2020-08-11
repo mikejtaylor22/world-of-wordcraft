@@ -1,7 +1,9 @@
 
 <div class="engagearea">
-<form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
-    <textarea formControlName="inputText" placeholder="Enter text here..." class="inone"></textarea>
-    <button type="submit" class="button">Engage!</button>
+<form [formGroup]="inputForm">
+    <textarea formControlName="inputText" placeholder="Enter/Paste text here..." class="inone"></textarea>
+    <button type="submit" class="button" (click)="onSubmit()" title="Click here to run the app!">Engage!</button>
+    <button type="submit" class="rbOne" (click)="resetSend()" title="Click here to reset">Reset</button>
 </form>
+
 </div>
