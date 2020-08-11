@@ -61,7 +61,7 @@ export class AppComponent {
     }, []);
 
     this.sortedList = unsortedList.sort((a, b) => b.qty - a.qty);
-    this.wordDisplay = this.sortedList.slice(0, 10);
+    this.wordDisplay = this.sortedList.slice(0, 25);
   }
 
   onGetSynonyms(word: string) {
@@ -92,7 +92,7 @@ export class AppComponent {
       return this.removedWords.indexOf(word.word) == -1;
     });
 
-    this.wordDisplay = removedWordsList.slice(0,10);
+    this.wordDisplay = removedWordsList.slice(0,25);
    }
 
   // removeWords(arrayOfWords: string[], wordsToRemove: string[]): string[] {
