@@ -9,15 +9,12 @@
     "lint": "ng lint",
     "heroku-postbuild": "ng build --prod",
     "e2e": "ng e2e"
-    
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.0",
-    "@angular/cli": "^10.0.5",
     "@angular/common": "~10.0.0",
     "@angular/compiler": "~10.0.0",
-    "@angular/compiler-cli": "^10.0.8",
     "@angular/core": "~10.0.0",
     "@angular/forms": "~10.0.0",
     "@angular/platform-browser": "~10.0.0",
