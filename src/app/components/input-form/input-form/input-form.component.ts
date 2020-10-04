@@ -10,6 +10,7 @@ export class InputFormComponent implements OnInit {
   @Output() wordArrayEvent = new EventEmitter<string[]>();
   @Output() resetArrayEvent = new EventEmitter<null>();
   inputForm: FormGroup;
+ 
 
   constructor() {}
 
@@ -23,6 +24,7 @@ export class InputFormComponent implements OnInit {
     // const arrayOfLines: string[] = this.inputForm.value.inputText.split(/\s+/);
     var arrayOfLines: string[] = this.inputForm.value.inputText.split(/\s+/);
     this.wordArrayEvent.emit(arrayOfLines);
+    
   }
 
   public resetSend() {

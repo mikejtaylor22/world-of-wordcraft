@@ -1,7 +1,7 @@
 
 <div class="engagearea">
 <form [formGroup]="inputForm">
-    <textarea formControlName="inputText" placeholder="Enter/Paste text here..." class="inone"></textarea>
+    <textarea formControlName="inputText" placeholder="Enter/Paste text here. App will calculate all words by default unless you specify a different word count above" class="inone"></textarea>
     <button type="submit" class="button" (click)="onSubmit()" title="Click here to run the app!">Engage!</button>
     <button type="submit" class="rbOne" (click)="resetSend()" title="Click here to reset">Reset</button>
 </form>

@@ -6,10 +6,18 @@
     <img src="https://live.staticflickr.com/670/22211662874_53411cc1b4_b.jpg" alt=""> 
   </div>
   
+  <div class="enterNum" *ngIf="engage===false">
+    <!-- <input type="text" placeholder="Enter # of words to display" #inp>&nbsp;  -->
+    <input type="text" placeholder="Enter # of words to show" [(ngModel)]="sliceNum">
+    <!-- <button type="submit" class="numChoice" (click)='setSlice(inp.value)'>Set!</button> -->
+  </div>
 
   <div class="engagearea">
     <app-input-form (wordArrayEvent)='engageApp($event)' (resetArrayEvent)='onReset()'></app-input-form>
   </div>
+
+
+  
 
 
   <div class="displayTable" *ngIf="(engage == true)">
@@ -31,6 +39,9 @@
           <td>{{row.qty}}</td>
           <td><button class="small-btn" (click)="onGetSynonyms(row.word)" title="Click to get Synonyms"><b>Synonyms</b></button>{{row.syns}}</td>
         </tr>
+        <tr>
+        <td>Total Wordcount: {{totalWords}}</td>
+      </tr>
       </tbody>
     </table>
 

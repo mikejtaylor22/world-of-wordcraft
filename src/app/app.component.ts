@@ -20,17 +20,30 @@ export class AppComponent {
   arrayOfLines: string[];
   sortedList: Word[];
   removedWords: string[] = [];
-
+  totalWords: number;
+  sliceNum: number;
+  sliceSet = false;
   constructor(private thesaurusService: ThesaurusService) {}
+
+ 
 
   engageApp(arrayOfLines: string[]) {
     this.engage = true;
+    
+    
+    
+    
 
     //remove all unnecessary characters and make everything lowercase
     this.strippedArray = arrayOfLines.map((s) =>
       s.replace(/[^0-9a-z]/gi, '').toLowerCase()
     );
 
+    if(this.sliceSet === false && this.sliceNum <= 0){
+    this.sliceNum = this.strippedArray.length;
+    }
+
+    this.totalWords = this.strippedArray.length;
     //get all the words in the array and the number of times they are used
     const unsortedList: Word[] = this.strippedArray.reduce((accum, value) => {
       const dupeIndex = accum.findIndex((itemX) => itemX.word == value);
@@ -46,7 +59,7 @@ export class AppComponent {
     }, []);
 
     this.sortedList = unsortedList.sort((a, b) => b.qty - a.qty);
-    this.wordDisplay = this.sortedList.slice(0, 25);
+    this.wordDisplay = this.sortedList.slice(0, this.sliceNum);
   }
 
   //using thesaurusService to call thesaurus API
@@ -57,7 +70,8 @@ export class AppComponent {
         const index = this.wordDisplay.findIndex((element: Word) => {
           return element.word == word;
         });
-        this.wordDisplay[index].syns = dictionaryResponse[0].meta.syns;
+        const synonyms = dictionaryResponse[0].meta.syns.join().replace(/,/g,', ');
+        this.wordDisplay[index].syns = synonyms;
       });
   }
 
@@ -68,6 +82,9 @@ export class AppComponent {
     this.wordDisplay = [];
     this.engage = false;
     this.removedWords = [];
+    // this.sliceNum = this.strippedArray.length;
+    this.sliceNum = null;
+    this.sliceSet = false;
     //Would like to also clear the textarea here
   }
 
@@ -77,6 +94,6 @@ export class AppComponent {
       return this.removedWords.indexOf(word.word) == -1;
     });
 
-    this.wordDisplay = removedWordsList.slice(0, 25);
+    this.wordDisplay = removedWordsList.slice(0, this.sliceNum);
   }
 }
