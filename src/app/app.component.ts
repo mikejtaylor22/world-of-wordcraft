@@ -31,9 +31,6 @@ export class AppComponent {
     this.engage = true;
     
     
-    
-    
-
     //remove all unnecessary characters and make everything lowercase
     this.strippedArray = arrayOfLines.map((s) =>
       s.replace(/[^0-9a-z]/gi, '').toLowerCase()
@@ -43,7 +40,9 @@ export class AppComponent {
     this.sliceNum = this.strippedArray.length;
     }
 
+    //store the amount of words the user input
     this.totalWords = this.strippedArray.length;
+    
     //get all the words in the array and the number of times they are used
     const unsortedList: Word[] = this.strippedArray.reduce((accum, value) => {
       const dupeIndex = accum.findIndex((itemX) => itemX.word == value);
