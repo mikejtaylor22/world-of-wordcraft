@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 import { ThesaurusService} from './thesaurus.service';
 import { DictionaryResponse, Word } from './models';
 
-
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,9 +20,8 @@ export class AppComponent {
   totalWords: number;
   sliceNum: number;
   sliceSet = false;
-  constructor(private thesaurusService: ThesaurusService) {}
 
- 
+  constructor(private thesaurusService: ThesaurusService) {}
 
   engageApp(arrayOfLines: string[]) {
     this.engage = true;
@@ -36,6 +32,7 @@ export class AppComponent {
       s.replace(/[^0-9a-z]/gi, '').toLowerCase()
     );
 
+    //sets the # of results to display
     if(this.sliceSet === false && this.sliceNum <= 0){
     this.sliceNum = this.strippedArray.length;
     }
@@ -81,12 +78,11 @@ export class AppComponent {
     this.wordDisplay = [];
     this.engage = false;
     this.removedWords = [];
-    // this.sliceNum = this.strippedArray.length;
     this.sliceNum = null;
     this.sliceSet = false;
-    //Would like to also clear the textarea here
   }
 
+  //removes worlds from the generated list
   onRemove(word: string) {
     this.removedWords.push(word);
     const removedWordsList = this.sortedList.filter((word: Word) => {

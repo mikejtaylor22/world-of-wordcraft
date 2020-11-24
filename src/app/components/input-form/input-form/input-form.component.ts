@@ -14,6 +14,7 @@ export class InputFormComponent implements OnInit {
 
   constructor() {}
 
+  //create the form group on init
   ngOnInit() {
     this.inputForm = new FormGroup({
       inputText: new FormControl(null),

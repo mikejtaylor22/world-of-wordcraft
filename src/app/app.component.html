@@ -7,17 +7,12 @@
   </div>
   
   <div class="enterNum" *ngIf="engage===false">
-    <!-- <input type="text" placeholder="Enter # of words to display" #inp>&nbsp;  -->
     <input type="text" placeholder="Enter # of words to show" [(ngModel)]="sliceNum">
-    <!-- <button type="submit" class="numChoice" (click)='setSlice(inp.value)'>Set!</button> -->
   </div>
 
   <div class="engagearea">
     <app-input-form (wordArrayEvent)='engageApp($event)' (resetArrayEvent)='onReset()'></app-input-form>
   </div>
-
-
-  
 
 
   <div class="displayTable" *ngIf="(engage == true)">
@@ -29,9 +24,6 @@
           <th>Synonyms</th>
         </tr>
       </thead>
-
-
-
 
       <tbody>
         <tr *ngFor="let row of wordDisplay">
